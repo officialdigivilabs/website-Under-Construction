@@ -1,0 +1,165 @@
+/* ==========================================================
+   Digivi Labs – Under Construction
+   1 --u = 1px pada desain PNG (1672 x 941)
+   ========================================================== */
+
+:root {
+    --cream:    #FCF3E4;
+    --brown:    #603A20;
+    --orange:   #FB8C48;
+    --charcoal: #262626;
+    --green:    #94DC8B;
+    --yellow:   #FFD45F;
+    --peach:    #FCE3C2;
+
+    --u: min(0.05981vw, 0.10627vh);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: "Nunito", "Varela Round", "Segoe UI", system-ui, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Halaman ---------- */
+.page {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------- Konten tengah (desktop) ---------- */
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: calc((100svh - 941 * var(--u)) / 2 + 70 * var(--u));
+}
+
+.logo {
+    font-family: "Quicksand", "Varela Round", "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: calc(84 * var(--u));
+    line-height: calc(110 * var(--u));
+    letter-spacing: 0.01em;
+    color: var(--brown);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.illustration {
+    display: block;
+    width: calc(850 * var(--u));
+    height: auto;
+    margin-top: calc(45 * var(--u));
+}
+
+.title {
+    margin-top: calc(28 * var(--u));
+    font-size: calc(99 * var(--u));
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    text-align: center;
+    color: var(--brown);
+}
+
+.divider {
+    width: calc(362 * var(--u));
+    height: calc(15 * var(--u));
+    margin-top: calc(15 * var(--u));
+    border-radius: 999px;
+    background: var(--peach);
+}
+
+/* ---------- Blob sudut ---------- */
+.corner {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    height: auto;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.corner--tl { top: 0;    left: 0;  width: calc(360 * var(--u)); }
+.corner--tr { top: 0;    right: 0; width: calc(230 * var(--u)); }
+.corner--bl { bottom: 0; left: 0;  width: calc(330 * var(--u)); }
+.corner--br { bottom: 0; right: 0; width: calc(337 * var(--u)); }
+
+.fill-orange   { fill: var(--orange); }
+.fill-charcoal { fill: var(--charcoal); }
+.fill-green    { fill: var(--green); }
+.fill-yellow   { fill: var(--yellow); }
+.fill-brown    { fill: var(--brown); }
+.fill-white    { fill: #fff; }
+.stroke-brown  { stroke: var(--brown); }
+.stroke-orange { stroke: var(--orange); }
+.stroke-peach  { stroke: var(--peach); }
+.stroke-yellow { stroke: var(--yellow); }
+
+/* ==========================================================
+   Tablet & Smartphone (≤ 900px)
+   ========================================================== */
+@media (max-width: 900px) {
+    :root {
+        --u: min(0.2564vw, 1.45px);
+    }
+
+    .page {
+        justify-content: center;
+    }
+
+    .content {
+        margin-top: 0;
+        padding: calc(70 * var(--u)) 0 calc(80 * var(--u));
+    }
+
+    .logo {
+        font-size: calc(58 * var(--u));
+        line-height: calc(76 * var(--u));
+    }
+
+    .illustration {
+        width: calc(350 * var(--u));
+        margin-top: calc(22 * var(--u));
+    }
+
+    .title {
+        margin-top: calc(18 * var(--u));
+        font-size: calc(34 * var(--u));
+    }
+
+    .divider {
+        width: calc(150 * var(--u));
+        height: calc(8 * var(--u));
+        margin-top: calc(14 * var(--u));
+    }
+
+    .corner--tl { width: calc(125 * var(--u)); }
+    .corner--tr { width: calc(85 * var(--u)); }
+    .corner--bl { width: calc(120 * var(--u)); }
+    .corner--br { width: calc(125 * var(--u)); }
+}
